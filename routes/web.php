@@ -61,10 +61,22 @@ Route::group(['middleware' =>['auth','checkRole:1']],function(){
     // Route::get('/about','AboutAdminController@index');
     Route::get('/admin/about','AboutAdminController@index')->name('about');
     // Route::get('/admin/about/hapus_deskripsi/{id}','AboutAdminController@hapus_deskripsi')->name('hapus_deskripsi');
+    //crud admin about
     Route::get('/admin/about/hapus/{id}','AboutAdminController@hapus');
     Route::get('/admin/about/edit/{id_about}','AboutAdminController@edit');
     Route::get('/admin/about/tambah','AboutAdminController@tambah');
     Route::post('/admin/about/tambah/store','AboutAdminController@store');
     Route::post('/admin/about/update','AboutAdminController@update');
 
+    //crud admin user 
+    Route::get('/admin/user/hapus/{id}','UserAdminController@hapus');
+    Route::get('/admin/user/edit/{id_mahasiswa}','UserAdminController@edit');
+    Route::get('/admin/user/tambah','UserAdminController@tambah');
+    Route::post('/admin/user/tambah/store','UserAdminController@store');
+    Route::post('/admin/user/update','UserAdminController@update');
+    //crud admin kuisioner
+
+    // crud result admin
+
+    // crud history
 });

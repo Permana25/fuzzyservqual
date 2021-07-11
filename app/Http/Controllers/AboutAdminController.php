@@ -8,7 +8,7 @@ class AboutAdminController extends Controller
 {
     public function index()
     {
-        $about= DB ::table('about')->paginate(2);
+        $about= DB ::table('about')->paginate(10);
         return view('/admin.about.index',['about'=>$about]);
     }
    

@@ -30,7 +30,7 @@
                 <div class="card">
                     <div class="card-header">
                         {{-- <strong class="card-title">Kuisioner</strong> --}}
-                        <a class="btn btn-success bt-sm" href="about/tambah/">Tambah</a>
+                        <a class="btn btn-success bt-sm" href="about/tambah/"><i class="fa fa-plus-circle"></i> Tambah</a>
                     </div>
                     <div class="card-body">
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">

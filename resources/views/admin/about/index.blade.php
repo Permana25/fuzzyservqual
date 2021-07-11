@@ -30,7 +30,7 @@
                 <div class="card">
                     <div class="card-header">
                         {{-- <strong class="card-title">Kuisioner</strong> --}}
-                        <a class="btn btn-success bt-sm" href="about/tambah/">Tambah</a>
+                        <a class="btn btn-success" href="about/tambah/"><i class="fa fa-plus-circle"></i> Tambah</a>
                     </div>
                     <div class="card-body">
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -57,8 +57,8 @@
                                         <td>{{$about->firstItem()+$no}}</td>
                                         <td>{{$b->deskripsi}}</td>
                                         <td style="text-align:center">
-                                            <a  class="btn btn-primary bt-sm "href="about/edit/{{ $b->id_about }}">Edit</a>
-                                            <a  class="btn btn-danger bt-sm "href="about/hapus/{{ $b->id_about }}">Hapus</a>
+                                            <a  class="btn btn-primary bt-sm "href="about/edit/{{ $b->id_about }}"><i class="fa fa-edit"></i> Edit</a>
+                                            <a  class="btn btn-danger bt-lg "href="about/hapus/{{ $b->id_about }}"><i class="fa fa-trash-o"></i> Hapus</a>
                                         </td>
                     
                                       
