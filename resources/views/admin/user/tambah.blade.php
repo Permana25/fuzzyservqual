@@ -47,14 +47,14 @@
                     <div class="col col-md-3"><label for="select" class=" form-control-label">Role</label></div>
                     <div class="col-12 col-md-9">
                         <select name="id_role" id="id_role" class="form-control">
-                            <option value="0">Pilih Role</option>
+                            <option selected disabled>Pilih Role</option>
                             <option value="1">Admin</option>
                             <option value="2">User</option>
                         </select>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary btn-sm">
+                    <button type="submit" class="btn btn-success btn-sm">
                         <i class="fa fa-dot-circle-o"></i> Submit</button>
                     <button type="reset" class="btn btn-danger btn-sm">
                         <i class="fa fa-ban"></i> Reset</button>

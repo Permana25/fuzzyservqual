@@ -5,7 +5,7 @@
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
-                <h1>Home</h1>
+                <h1>About</h1>
             </div>
         </div>
     </div>
@@ -29,16 +29,24 @@
         <div class="card-body card-block">
             <form action="/admin/about/tambah/store" method="post" >
                 @csrf
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-addon">Deskripsi</div>
-                        <input type="text" id="deskripsi" name="deskripsi" class="form-control">
-                        {{-- <div class="input-group-addon"><i class="fa fa-user"></i></div> --}}
+                {{-- <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="textarea-input" class=" form-control-label">Deskripsi</label></div>
+                    <div class="col-12 col-md-9">
+                        <textarea name="deskripsi" id="deskripsi" rows="9" placeholder="Content..." class="form-control"></textarea></div>
+                    </div> --}}
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="textarea-input" class=" form-control-label">Deskripsi</label></div>
+                        <div class="col-12 col-md-9">
+                            <textarea name="deskripsi" id="deskripsi" rows="9" placeholder="Content..." class="form-control"></textarea></div>
+                        </div>
+                        {{-- <input type="text" id="deskripsi" name="deskripsi"  row="9" class="form-control"> --}}
                     </div>
                 </div>
               
                 <div class="form-actions form-group">
-                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                    <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-save"></i> Submit</button>
                 </div>
             </form>
         </div>
