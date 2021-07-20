@@ -5,7 +5,7 @@
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
-                <h1>Home</h1>
+                <h1>About</h1>
             </div>
         </div>
     </div>
@@ -29,15 +29,21 @@
         <div class="card-body card-block">
             <form action="/admin/about/update" method="post" >
                 @csrf
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-addon">Deskripsi</div>
-                        <input type="hidden" name="id_about" value="{{ $a[0]->id_about }}"> <br/>
-                        <input type="text" id="deskripsi" name="deskripsi" class="form-control" value="{{ $a[0]->deskripsi }}">
-                        {{-- <div class="input-group-addon"><i class="fa fa-user"></i></div> --}}
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Judul</label></div>
+                    <input type="hidden" name="id_tentang" value="{{ $a   [0]->id_tentang }}"> <br/>
+                    <input type="hidden" name="judul" value="{{ $a   [0]->judul }}"> <br/>
+                    <div class="col-12 col-md-9">
+                        <input type="text" id="judul" name="judul" value="{{ $a[0]->judul }}" placeholder="Judul" class="form-control"></div>
+                    </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="textarea-input" class=" form-control-label">Deskripsi</label></div>
+                        <div class="col-12 col-md-9">
+                            <textarea name="deskripsi" id="deskripsi" rows="9"  placeholder="Content..." class="form-control">{{ $a[0]->deskripsi }}</textarea></div>
+                        </div>
                     </div>
                 </div>
-              
                 <div class="form-actions form-group">
                     <button type="submit" class="btn btn-primary btn-sm">Update</button>
                 </div>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoryTable extends Migration
+class CreateTentangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('category', function (Blueprint $table) {
-            $table->bigIncrements('id_category');
-            $table->string('deskripsi');
+        Schema::create('tentang', function (Blueprint $table) {
+            $table->bigIncrements('id_tentang');
+            $table->string('judul')->nullable();
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('tentang');
     }
 }

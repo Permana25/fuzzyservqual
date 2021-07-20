@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 use Illuminate\support\Facades\DB;
 use Illuminate\Http\Request;
 use Hash;
+use App\Pengguna;
 
 class UserAdminController extends Controller
 {
     public function index(){
-        $mahasiswa= DB ::table('mahasiswa')->paginate(10);
+        $pengguna= DB ::table('pengguna')->paginate(10);
         // return view('/admin.about.index',['about'=>$mahasiswa]);
-        return view('admin.user.index',['mahasiswa'=>$mahasiswa]);
+        return view('admin.user.index',['pengguna'=>$pengguna]);
     }
     public function tambah(){
         
@@ -19,13 +20,22 @@ class UserAdminController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        DB::table('mahasiswa')->insert([
-            'name'=> $request->name,
-            'nim'=> $request->nim,
-            'id_role'=> $request->id_role,
-            'password'=> $request->password,
-            // $password = Hash::make('password'),
+        $pengguna = new Pengguna();
+        $pengguna->nim = $request->nim;
+        $pengguna->nama = $request->nama;
+        $pengguna->password = Hash::make($request->password, [
+            'rounds' => 12
         ]);
+        $pengguna->save();
+        // DB::table('pengguna')->insert([
+        //     'nim'=> $request->nim,
+        //     'nama'=> $request->nama,
+        //     // 'password'=> $request->password,
+        //     'password' => Hash::make($request->password, [
+        //         'rounds' => 12
+        //     ]);
+        //     // $password = Hash::make('password'),
+        // ]);
         return redirect ('/user');
     }
     public function hapus($id)
@@ -33,24 +43,23 @@ class UserAdminController extends Controller
         // DB ::table('about')->where('id_about','$id')->delete();
         // return redirect('/admin/about');
 
-        DB::table('mahasiswa')->where('id_mahasiswa',$id)->delete();
+        DB::table('pengguna')->where('id_pengguna',$id)->delete();
             
         // alihkan halaman ke halaman 
         return redirect('/user');
     }
     public function edit(Request $request)
     {
-        $mahasiswa = DB::table('mahasiswa')->where('id_mahasiswa',$request->id_mahasiswa)->get();
-        return view('admin/user/edit',['b' => $mahasiswa]);
+        $pengguna = DB::table('pengguna')->where('id_pengguna',$request->id_pengguna)->get();
+        return view('admin/user/edit',['p' => $pengguna]);
     }
     public function update(Request $request)
 {
 	// update data pegawai
-	DB::table('mahasiswa')->where('id_mahasiswa',$request->id_mahasiswa)->update([
-		'name' => $request->name,
-        'nim' => $request->nim,
+	DB::table('pengguna')->where('id_pengguna',$request->id_pengguna)->update([
+		'nim' => $request->nim,
+        'nama' => $request->nama,
         'password' => $request->password,
-        'id_role' =>$request->id_role
 	]);
 	// alihkan halaman ke halaman pegawai
 	return redirect('/user');

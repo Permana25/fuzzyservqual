@@ -8,8 +8,8 @@ class AboutAdminController extends Controller
 {
     public function index()
     {
-        $about= DB ::table('about')->paginate(10);
-        return view('/admin.about.index',['about'=>$about]);
+        $tentang= DB ::table('tentang')->paginate(10);
+        return view('/admin.about.index',['tentang'=>$tentang]);
     }
    
     public function hapus($id)
@@ -17,7 +17,7 @@ class AboutAdminController extends Controller
         // DB ::table('about')->where('id_about','$id')->delete();
         // return redirect('/admin/about');
 
-        DB::table('about')->where('id_about',$id)->delete();
+        DB::table('tentang')->where('id_tentang',$id)->delete();
             
         // alihkan halaman ke halaman pegawai
         return redirect('/admin/about');
@@ -28,23 +28,23 @@ class AboutAdminController extends Controller
     }
     public function store(Request $request)
     {
-        DB::table('about')->insert([
+        DB::table('tentang')->insert([
+            'judul' => $request->judul,
             'deskripsi'=> $request->deskripsi
         ]);
         return redirect ('/admin/about');
     }
     public function edit(Request $request)
     {
-        $about = DB::table('about')->where('id_about',$request->id_about)->get();
-        return view('admin/about/edit',['a' => $about]);
+        $tentang = DB::table('tentang')->where('id_tentang',$request->id_tentang)->get();
+        return view('admin/about/edit',['a' => $tentang]);
     }
     public function update(Request $request)
 {
-	// update data pegawai
-	DB::table('about')->where('id_about',$request->id_about)->update([
+	DB::table('tentang')->where('id_tentang',$request->id_tentang)->update([
+        'judul' => $request->judul,
 		'deskripsi' => $request->deskripsi
 	]);
-	// alihkan halaman ke halaman pegawai
 	return redirect('/admin/about');
 }
 }

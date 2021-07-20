@@ -21,7 +21,10 @@
                             <a href="/admin/kuisioner"> <i class="menu-icon fa fa-tasks"></i>KUISIONER</a>
                         </li>
                         <li>
-                            <a href="/history"> <i class="menu-icon fa fa-puzzle-piece"></i>HISTORY</a>
+                            <a href="/answer"> <i class="menu-icon fa fa-file-text-o"></i> ANSWER</a>
+                        </li>
+                        <li>
+                            <a href="/kategori"> <i class="menu-icon fa fa-puzzle-piece"></i>CATEGORY</a>
                         </li>
                         <li>
                             <a href="/user"> <i class="menu-icon fa fa-users"></i>USER</a>

@@ -34,26 +34,16 @@
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama</label></div>
                     <div class="col-12 col-md-9"> 
-                        <input type="hidden" name="id_mahasiswa" value="{{ $b   [0]->id_mahasiswa }}"> <br/>
-                        <input type="text" id="name" name="name" value="{{ $b[0]->name }}" placeholder="Nama Mahasiswa" class="form-control"></div>
+                        <input type="hidden" name="id_pengguna" value="{{ $p   [0]->id_pengguna }}"> <br/>
+                        <input type="text" id="nama" name="nama" value="{{ $p[0]->nama }}" placeholder="Nama Mahasiswa" class="form-control"></div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="email-input" class=" form-control-label">NIM</label></div>
-                    <div class="col-12 col-md-9"><input type="text" id="nim" name="nim" value="{{ $b[0]->nim }}" placeholder="NIM Mahasiswa" class="form-control"></div>
+                    <div class="col-12 col-md-9"><input type="text" id="nim" name="nim" value="{{ $p[0]->nim }}" placeholder="NIM Mahasiswa" class="form-control"></div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="password-input" class=" form-control-label">Password</label></div>
-                    <div class="col-12 col-md-9"><input type="password" id="password" name="password" value="{{ $b[0]->password }}" placeholder="Password" class="form-control"></div>
-                </div>
-                <div class="row form-group">
-                    <div class="col col-md-3"><label for="select" class=" form-control-label">Role</label></div>
-                    <div class="col-12 col-md-9">
-                        <select name="id_role"  id="id_role" class="form-control">
-                            <option value="">Pilih Role</option>
-                            <option  value="1">Admin</option>
-                            <option value="2">User</option>
-                        </select>
-                    </div>
+                    <div class="col-12 col-md-9"><input type="password" id="password" name="password" value="{{ $p[0]->password }}" placeholder="Password" class="form-control"></div>
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-success btn-sm">

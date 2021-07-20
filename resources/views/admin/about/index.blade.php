@@ -37,6 +37,7 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Judul</th>
                                     <th>Deskripsi</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -51,14 +52,15 @@
                                     
                                         <tr>
                                         </tr>
-                                    @foreach ($about as $no=>$b)
+                                    @foreach ($tentang as $no=>$b)
                                         <tr>
                                         </tr>
-                                        <td>{{$about->firstItem()+$no}}</td>
+                                        <td>{{$tentang->firstItem()+$no}}</td>
+                                        <td>{{$b->judul}}</td>
                                         <td>{{$b->deskripsi}}</td>
                                         <td style="text-align:center">
-                                            <a  class="btn btn-primary bt-sm "href="about/edit/{{ $b->id_about }}"><i class="fa fa-edit"></i> Edit</a>
-                                            <a  class="btn btn-danger bt-lg "href="about/hapus/{{ $b->id_about }}"><i class="fa fa-trash-o"></i> Hapus</a>
+                                            <a  class="btn btn-primary bt-sm "href="about/edit/{{ $b->id_tentang }}"><i class="fa fa-edit"></i> Edit</a>
+                                            <a  class="btn btn-danger bt-lg "href="about/hapus/{{ $b->id_tentang }}"><i class="fa fa-trash-o"></i> Hapus</a>
                                         </td>
                     
                                       

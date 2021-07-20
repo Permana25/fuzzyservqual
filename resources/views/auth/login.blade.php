@@ -52,7 +52,7 @@
                         @csrf
                         <div class="form-group">
                             {{-- <label>Username</label> --}}
-                            <input name="username"type="text" class="form-control" placeholder="Username">
+                            <input name="nim"type="text" class="form-control" placeholder="Username">
                         </div>
                             <div class="form-group">
                                 {{-- <label>Password</label> --}}

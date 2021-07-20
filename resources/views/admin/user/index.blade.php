@@ -37,9 +37,9 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
+                                    <th>Nama</th>
                                     <th>NIM</th>
-                                    <th>Role</th>
+                                    <th>Password</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -50,16 +50,16 @@
                                 <tbody>
                                     <tr>
                                     </tr>
-                                @foreach ($mahasiswa as $no=>$m)
+                                @foreach ($pengguna as $no=>$p)
                                     <tr>
                                     </tr>
-                                    <td>{{$mahasiswa->firstItem()+$no}}</td>
-                                    <td>{{$m->name}}</td>
-                                    <td>{{$m->nim}}</td>
-                                    <td>{{$m->id_role}}</td>
+                                    <td>{{$pengguna->firstItem()+$no}}</td>
+                                    <td>{{$p->nama}}</td>
+                                    <td>{{$p->nim}}</td>
+                                    <td>{{$p->password}}</td>
                                     <td style="text-align:center">
-                                        <a  class="btn btn-primary bt-sm "href="admin/user/edit/{{ $m->id_mahasiswa }}"><i class="fa fa-edit"></i> Edit</a>
-                                        <a  class="btn btn-danger bt-sm "href="admin/user/hapus/{{ $m->id_mahasiswa      }}"><i class="fa fa-trash-o"></i> Hapus</a>
+                                        <a  class="btn btn-primary bt-sm "href="admin/user/edit/{{ $p->id_pengguna }}"><i class="fa fa-edit"></i> Edit</a>
+                                        <a  class="btn btn-danger bt-sm "href="admin/user/hapus/{{ $p->id_pengguna      }}"><i class="fa fa-trash-o"></i> Hapus</a>
                                     </td>
                 
                                   

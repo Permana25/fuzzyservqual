@@ -150,7 +150,7 @@ class LoginController extends Controller
      */
     public function username()
     {
-        return 'username';
+        return 'nim';
     }
 
     /**
@@ -201,16 +201,7 @@ class LoginController extends Controller
         if (method_exists($this, 'redirectTo')) {
             return $this->redirectTo();
         }
-        // dd();
-        $id_role = Auth::user()->role;
-        $routeAdmin = '/dashboard';
-        $routeUser  = '/home';
-        $route ='';
-        if($id_role==1){
-            $route = $routeAdmin;
-        }else{
-            $route = $routeUser;
-        }
+        $route  = '/home';
         // $user = 
         // dd($route);
         return $route;

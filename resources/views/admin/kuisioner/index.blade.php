@@ -30,17 +30,16 @@
                 <div class="card">
                     <div class="card-header">
                         {{-- <strong class="card-title">Kuisioner</strong> --}}
-                        <a class="btn btn-success bt-sm" href="about/tambah/"><i class="fa fa-plus-circle"></i> Tambah</a>
+                        <a class="btn btn-success bt-sm" href="kuisioner/tambah/"><i class="fa fa-plus-circle"></i> Tambah</a>
                     </div>
                     <div class="card-body">
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Salary</th>
+                                    <th>Name Pertanyaan</th>
+                                    <th>Kategori</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,11 +52,12 @@
                                 @foreach ($pertanyaan as $no=>$p)
                                     <tr>
                                     </tr>
-                                    <td>{{$pertanyaan->firstItem()+$no}}</td>
-                                    <td>{{$p->pertanyaan}}</td>
+                                    <td>{{++$no}}</td>
+                                    <td>{{$p->nama_pertanyaan}}</td>
+                                    <td>{{$p->nama_kategori}}</td>
                                     <td style="text-align:center">
-                                        <a  class="btn btn-primary bt-sm "href="about/hapus/{{ $p->id_pertanyaan }}">Edit</a>
-                                        <a  class="btn btn-danger bt-sm "href="about/hapus/{{ $p->id_pertanyaan      }}">Hapus</a>
+                                        <a  class="btn btn-primary bt-sm "href="/admin/kuisioner/edit/{{ $p->id_pertanyaan }}">Edit</a>
+                                        <a  class="btn btn-danger bt-sm "href="/admin/kuisioner/hapus/{{ $p->id_pertanyaan      }}">Hapus</a>
                                     </td>
                 
                                   

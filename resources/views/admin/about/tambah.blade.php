@@ -29,19 +29,16 @@
         <div class="card-body card-block">
             <form action="/admin/about/tambah/store" method="post" >
                 @csrf
-                {{-- <div class="row form-group">
-                    <div class="col col-md-3">
-                        <label for="textarea-input" class=" form-control-label">Deskripsi</label></div>
-                    <div class="col-12 col-md-9">
-                        <textarea name="deskripsi" id="deskripsi" rows="9" placeholder="Content..." class="form-control"></textarea></div>
-                    </div> --}}
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Judul</label></div>
+                    <div class="col-12 col-md-9"><input type="text" id="judul" name="judul" placeholder="Text" class="form-control"></div>
+                    </div>
                 <div class="row form-group">
                     <div class="col col-md-3">
                         <label for="textarea-input" class=" form-control-label">Deskripsi</label></div>
                         <div class="col-12 col-md-9">
                             <textarea name="deskripsi" id="deskripsi" rows="9" placeholder="Content..." class="form-control"></textarea></div>
                         </div>
-                        {{-- <input type="text" id="deskripsi" name="deskripsi"  row="9" class="form-control"> --}}
                     </div>
                 </div>
               
